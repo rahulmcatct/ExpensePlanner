@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BankAccount" representedClassName="BankAccount" syncable="YES" codeGenerationType="class">
+        <attribute name="balance" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="expenseDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isRecurring" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="expenseCatagory" maxCount="1" deletionRule="Nullify" destinationEntity="ExpenseCatagory" inverseName="categoryExpenses" inverseEntity="ExpenseCatagory" syncable="YES"/>
+    </entity>
+    <entity name="ExpenseCatagory" representedClassName="ExpenseCatagory" syncable="YES" codeGenerationType="class">
+        <attribute name="categoryColor" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="categoryName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="categoryExpenses" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="expenseCatagory" inverseEntity="Expense" syncable="YES"/>
+    </entity>
+    <entity name="Income" representedClassName="Income" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="incomeDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isRecurring" optional="YES" attributeType="Boolean" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BankAccount" positionX="-144" positionY="-81" width="128" height="60"/>
+        <element name="Expense" positionX="-297" positionY="90" width="128" height="103"/>
+        <element name="ExpenseCatagory" positionX="-90" positionY="144" width="128" height="88"/>
+        <element name="Income" positionX="72" positionY="-81" width="128" height="88"/>
+    </elements>
+</model>
